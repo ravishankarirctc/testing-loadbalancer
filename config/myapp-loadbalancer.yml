@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: myapp-loadbalancer
+spec: 
+  type: LoadBalancer
+  selector: 
+    component: microservice-myapp #this is same of Deployment 
+  ports: 
+    - name: port-loadbalancer
+      protocol: TCP
+      port: 9999
+      targetPort: 9090
+    
